@@ -75,6 +75,7 @@ namespace Nustache.Core
             stringToReplace = stringToReplace.Trim(Environment.NewLine.ToCharArray());
             stringToReplace = stringToReplace.Replace(Environment.NewLine, "<br />");
             stringToReplace = stringToReplace.Replace("\n", "<br />");
+            stringToReplace = stringToReplace.Replace("&#13;&#10;", "<br />"); // Cater for AntiXss encoded line breaks
             return stringToReplace;
         }
     }
